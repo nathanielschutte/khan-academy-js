@@ -25,9 +25,15 @@ for project_div in project_divs:
     payload = json.load(open('get/query.json', 'r'))
     payload["variables"]["programId"] = project_id
 
+    # if project_title != 'Water and Object Physics Sim':
+    #     continue
+
     res = requests.post(f'https://www.khanacademy.org/api/internal/graphql/programQuery?lang=en&_=231005-1023-b72ed7a27e8b_1696644333505', json=payload)
     data = res.json()
-    code = data['data']['programById']['revision']['code']
+    code: str = data['data']['programById']['revision']['code']
+
+    if project_title == 'Water and Object Physics Sim':
+        code = code.replace('\u03c9', 'uu')
     
     with open(f"{project_title.lower()}.js", 'w') as f:
         f.write(code)
