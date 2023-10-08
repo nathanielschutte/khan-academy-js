@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <title>JS Project Archive</title>
+    </head>
+    <body>
+        <a href="https://site.coderotate.net">Back</a>
+        <h2>Projects</h2>
+        <ol>{list_items}</ol>
+    </body>
+</html>
