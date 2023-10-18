@@ -40,9 +40,6 @@ var grabbed = null;
 var hover = null;
 var onButton = null;
 
-var label = createFont("arial", 14);
-var info = createFont("arial", 10);
-
 var p = {
     x: [234, 120, 277],
     y: [160, 282, 234]
@@ -409,7 +406,7 @@ var drawPoints = function() {
 
 
 var labelPointsAndLines = function() {
-    textFont(label);
+    textFont("arial", 12);
     fill(0, 124, 191);
     text("A", (p.x[0] - 4) + 12 * (sin(dirA - 180)), (p.y[0] + 4) - 12 * (cos(dirA)));
     text("B", (p.x[1] - 4) + 12 * (sin(dirB - 180)), (p.y[1] + 4) - 12 * (cos(dirB)));
@@ -450,7 +447,7 @@ var drawTopBanner = function() {
     rect(326, 8, 67, bannerHeight - 16);
     
     fill(0, 81, 143);
-    textFont(info, 12);
+    textFont("arial", 12);
     text("Centers", 10, 20);
     text("Lines", 120, 20);
     text("Other", 230, 20);
@@ -460,7 +457,7 @@ var drawTopBanner = function() {
 
 
 var drawSwitches = function() {
-    textFont(info, 11);
+    textFont("arial", 11);
     
     for(var i = 0; i < switchCount; i++) {
         fill(182, 205, 222);
@@ -482,7 +479,7 @@ var drawSwitches = function() {
 
 
 var drawButtons = function() {
-    textFont(info, 12);
+    textFont("arial", 12);
     
     for(var i = 0; i < 3; i++) {
         stroke(0, 34, 56);
@@ -532,7 +529,7 @@ var showInfo = function() {
     var yOff1 = sin(t * 7) * 4;
     var yOff2 = cos(t * 7) * 4;
     
-    textFont(info, 16);
+    textFont("arial", 16);
     fill(255, 109, 69);
     text("Drag these points!", 209, 100 + yOff1);
     

@@ -57,6 +57,8 @@ for file in os.listdir('./'):
                 script = script.replace('pushMatrix();', 'push();')
                 script = script.replace('popMatrix();', 'pop();')
                 script = script.replace('createFont', 'textFont')
+                script = script.replace('var draw = function', 'draw = function')
+                script = script.replace('colorMode(HSB)', 'colorMode(HSB, 255)')
 
                 setupScript = script
 
